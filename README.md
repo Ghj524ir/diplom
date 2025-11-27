@@ -105,15 +105,15 @@ ansible-playbook expand.yml
 
 Переходим к elastic
 
-![elastic](/img/elk.png)
+![elastic](/img/elc.png)
 
-![elastic](/img/elk2.png)
+![elastic](/img/elc2.png)
 
-![elastic](/img/elk3.png)
+![elastic](/img/elc3.png)
 
-![elastic](/img/elk4.png)
+![elastic](/img/elc4.png)
 
-![elastic](/img/elk5.png)
+![elastic](/img/elc5.png)
 
 ## Резервное копирование
 
