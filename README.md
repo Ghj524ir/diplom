@@ -17,4 +17,4 @@
 ```
 terraform validate
 ```
-![terraform validate](/img/terraform valid.png)
+![terraform validate](/img/terraform_valid.png)
