@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добро пожаловать на {{ inventory_hostname }}</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f5f7fa;
+            color: #222;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 720px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+            padding: 24px 28px;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            margin-bottom: 6px;
+            color: #1a73e8;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-bottom: 22px;
+        }
+
+        .section-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 18px 0 10px;
+            color: #374151;
+        }
+
+        .info-block {
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            background: #f9fafb;
+            padding: 14px 16px;
+        }
+
+        .info-row {
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .info-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-row strong {
+            width: 140px;
+            min-width: 120px;
+            color: #4b5563;
+            font-weight: 600;
+        }
+
+        .info-row span {
+            color: #111827;
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 2px 10px;
+            border-radius: 999px;
+            background: #e6f4ea;
+            color: #137333;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 0.95rem;
+            color: #374151;
+        }
+
+        footer {
+            margin-top: 22px;
+            padding-top: 10px;
+            border-top: 1px solid #e5e7eb;
+            font-size: 0.9rem;
+            color: #6b7280;
+            text-align: right;
+        }
+
+        @media (max-width: 600px) {
+            .wrapper {
+                padding: 18px 16px;
+            }
+
+            .info-row {
+                flex-direction: column;
+            }
+
+            .info-row strong {
+                width: 100%;
+                margin-bottom: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Добро пожаловать на {{ inventory_hostname }}</h1>
+        <p class="subtitle">Дипломная работа Lomovsky Aleksandr</p>
+
+        <h2 class="section-title">Информация о сервере</h2>
+        <div class="info-block">
+            <div class="info-row">
+                <strong>Имя сервера:</strong>
+                <span>{{ inventory_hostname }}</span>
+            </div>
+            <div class="info-row">
+                <strong>IP-адрес:</strong>
+                <span>{{ ansible_default_ipv4.address }}</span>
+            </div>
+            <div class="info-row">
+                <strong>Статус:</strong>
+                <span class="status-pill">Онлайн</span>
+            </div>
+            <div class="info-row">
+                <strong>Часовой пояс:</strong>
+                <span>Europe/Moscow</span>
+            </div>
+        </div>
+
+        <h2 class="section-title">О проекте</h2>
+        <p>
+            Эта статическая страница автоматически развернута с использованием Ansible.
+            Балансировщик нагрузки обеспечивает высокую доступность и надежность сервиса.
+        </p>
+
+        <footer>
+            Развернуто: {{ ansible_date_time.date }}
+        </footer>
+    </div>
+</body>
+</html>
