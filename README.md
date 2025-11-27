@@ -49,7 +49,7 @@ Dashboard
 
 Балансировщик
 
-![balance](/img/balance.png)
+![balance](/img/balans.png)
 
 Target group
 
